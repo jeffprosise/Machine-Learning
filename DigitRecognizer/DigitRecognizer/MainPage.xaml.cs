@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text;
 using System.Threading.Tasks;
 using Windows.Devices.Input;
 using Windows.Foundation;
@@ -22,9 +23,9 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Shapes;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace MLClient
+namespace DigitRecognizer
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -126,7 +127,7 @@ namespace MLClient
                 // Call the ML service
                 await MLSubmitAsync(values);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 // Let the user know if something went wrong
                 var dialog = new MessageDialog(ex.Message);
@@ -185,10 +186,11 @@ namespace MLClient
                 };
 
                 const string key = "api_key";
+                const string url = "web_service_url";
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", key);
-                client.BaseAddress = new Uri("web_service_url");
+                var content = new StringContent(JsonConvert.SerializeObject(request), Encoding.UTF8, "application/json");
 
-                HttpResponseMessage response = await client.PostAsJsonAsync("", request).ConfigureAwait(false);
+                HttpResponseMessage response = await client.PostAsync(url, content).ConfigureAwait(false);
 
                 // Resumes on background thread, so marshal to the UI thread
                 await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>

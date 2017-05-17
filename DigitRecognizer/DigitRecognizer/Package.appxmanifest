@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="7d253cb1-7556-4043-8bdf-1e7191cdac13"
-    Publisher="CN=Jeff"
+    Name="0a6dbaf8-fa11-49d3-8024-ce98ca8f05eb"
+    Publisher="CN=jeffp"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="7d253cb1-7556-4043-8bdf-1e7191cdac13" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="0a6dbaf8-fa11-49d3-8024-ce98ca8f05eb" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>MLClient</DisplayName>
-    <PublisherDisplayName>Jeff</PublisherDisplayName>
+    <DisplayName>DigitRecognizer</DisplayName>
+    <PublisherDisplayName>jeffp</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -30,12 +30,12 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="MLClient.App">
+      EntryPoint="DigitRecognizer.App">
       <uap:VisualElements
-        DisplayName="MLClient"
+        DisplayName="DigitRecognizer"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="MLClient"
+        Description="DigitRecognizer"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
