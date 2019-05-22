@@ -1,2 +1,1 @@
-# Machine-Learning
-Samples demonstrating how to build intelligent apps with Azure Machine Learning
+Repository for samples demonstrating the fundamentals of machine learning
